@@ -1,4 +1,4 @@
-package com.yangguang;
+package com.yangguang.Class;
 
 public class Human {
     private int height;

@@ -1,4 +1,6 @@
-package com.yangguang;
+package com.yangguang.Class;
+
+import com.yangguang.Class.Battery;
 
 public class Torch {
     private Battery theBattery = new Battery();

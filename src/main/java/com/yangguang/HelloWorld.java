@@ -1,3 +1,5 @@
+package com.yangguang;
+
 import com.yangguang.Class.*;
 
 public class HelloWorld {

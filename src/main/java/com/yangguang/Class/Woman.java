@@ -1,6 +1,8 @@
-package com.yangguang;
+package com.yangguang.Class;
 
-public class Woman extends Human{
+import com.yangguang.Class.Human;
+
+public class Woman extends Human {
 
     public Woman(int h){
         super(h);

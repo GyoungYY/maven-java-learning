@@ -1,4 +1,4 @@
-package com.yangguang;
+package com.yangguang.Class;
 
 public class MusicCup implements Cup, MusicPlayer {
     private int water = 0;
