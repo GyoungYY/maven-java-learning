@@ -1,4 +1,4 @@
-import com.yangguang.*;
+import com.yangguang.Class.*;
 
 public class HelloWorld {
     public static void main(String[] args) {
