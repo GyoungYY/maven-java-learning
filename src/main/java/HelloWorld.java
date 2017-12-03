@@ -20,5 +20,10 @@ public class HelloWorld {
         aTorch.charge(2);
         aTorch.turnOn(3);
         System.out.println(aTorch.getPower());
+
+        //继承
+        Woman woman = new Woman(5);
+        woman.growHeight(10);
+        System.out.println(woman.getHeight());
     }
 }
