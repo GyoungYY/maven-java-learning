@@ -1,4 +1,4 @@
-package com.yangguang;
+package com.yangguang.Class;
 
 public class Battery {
     private double power = 0.0;
