@@ -5,7 +5,7 @@ import com.yangguang.Class.*;
 import java.io.*;
 
 public class HelloWorld {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         //基本类型
         int a = 5;
         System.out.println(a + 1);
@@ -37,7 +37,7 @@ public class HelloWorld {
 
         //类型转换
         int b;
-        b = (int)1.23;
+        b = (int) 1.23;
         System.out.println(b);
 
         //向上转型，仍调用子类方法
@@ -45,21 +45,21 @@ public class HelloWorld {
         aCup.addWater(10);
         Human guest = new Human(5);
         BrokenCup bCup = new BrokenCup();
-        guest.drink(bCup,10);
+        guest.drink(bCup, 10);
 
         //String字符串类
         String s = "yangguang  ";
-        System.out.println("字符串长度"+ s.length());
+        System.out.println("字符串长度" + s.length());
         System.out.println(s.charAt(2));
-        System.out.println(s.substring(0,4));
+        System.out.println(s.substring(0, 4));
         System.out.println(s.indexOf("gg"));
         System.out.println(s.equals("yang"));
         System.out.println("length:" + s.trim().length());
 
         //异常处理
-        try{
-            BufferedReader br =  new BufferedReader(new FileReader("file.txt"));
-        }catch(IOException e){
+        try {
+            BufferedReader br = new BufferedReader(new FileReader("file.txt"));
+        } catch (IOException e) {
             e.printStackTrace();
             System.out.println("IO Problem");
         }
@@ -70,31 +70,48 @@ public class HelloWorld {
         battery.useBattery(-0.5);
 
         //文件读操作
-        try{
+        try {
             BufferedReader br = new BufferedReader(new FileReader("file.txt"));
             String line = br.readLine();
-            while(line != null){
+            while (line != null) {
                 System.out.println(line);
                 line = br.readLine();
             }
             br.close();
-        }catch (IOException e){
+        } catch (IOException e) {
             System.out.println("IO Read Problem");
         }
 
         //文件写操作
-        try{
+        try {
             String content = "Thank you for your fish.";
             File file = new File("new.txt");
-            if(!file.exists()){
+            if (!file.exists()) {
                 file.createNewFile();
             }
             FileWriter fw = new FileWriter(file.getAbsoluteFile());
             BufferedWriter bw = new BufferedWriter(fw);
             bw.write(content);
             bw.close();
-        }catch (IOException e){
+        } catch (IOException e) {
             System.out.println("IO Write Problem");
         }
+
+        //多线程
+        NewThread thread1 = new NewThread();
+        NewThread thread2 = new NewThread();
+        thread1.start();
+        thread2.start();
+
+        Thread thread3 = new Thread(new NewThread2(), "first");
+        Thread thread4 = new Thread(new NewThread2(), "second");
+        thread3.start();
+        thread4.start();
+
+        //多线程卖票程序
+        Reservoir r = new Reservoir(30);
+        Booth b1 = new Booth(r);
+        Booth b2 = new Booth(r);
+        Booth b3 = new Booth(r);
     }
 }
