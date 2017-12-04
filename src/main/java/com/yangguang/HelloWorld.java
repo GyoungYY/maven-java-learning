@@ -44,5 +44,14 @@ public class HelloWorld {
         Human guest = new Human(5);
         BrokenCup bCup = new BrokenCup();
         guest.drink(bCup,10);
+
+        //String字符串类
+        String s = "yangguang  ";
+        System.out.println("字符串长度"+ s.length());
+        System.out.println(s.charAt(2));
+        System.out.println(s.substring(0,4));
+        System.out.println(s.indexOf("gg"));
+        System.out.println(s.equals("yang"));
+        System.out.println("length:" + s.trim().length());
     }
 }
