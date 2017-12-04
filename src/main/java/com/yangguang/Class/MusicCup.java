@@ -1,5 +1,6 @@
 package com.yangguang.Class;
 
+//一个类实现多个接口
 public class MusicCup implements Cup, MusicPlayer {
     private int water = 0;
 

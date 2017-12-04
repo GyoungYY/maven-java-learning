@@ -2,13 +2,17 @@ package com.yangguang.Class;
 
 public class Human {
     private int height;
+    private static int population;
+    public static boolean is_mammal = true;
 
     public Human(int h) {
+        Human.population += 1;
         this.height = h;
         System.out.println("I'm in constructor!");
     }
 
     public Human(int h, String s) {
+        Human.population += 1;
         this.height = h;
         System.out.println("I'm in constructor2,," + s);
     }
@@ -37,5 +41,13 @@ public class Human {
         for (i = 0; i < c; i++) {
             this.breath();
         }
+    }
+
+    public static int getPopulation(){
+        return Human.population;
+    }
+
+    public void drink(MusicCup aCup,int w){
+        aCup.drinkWater(w);
     }
 }

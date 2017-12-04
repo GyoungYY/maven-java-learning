@@ -13,6 +13,8 @@ public class HelloWorld {
 
         //类、包
         Human aPerson = new Human(5, "shit");
+        //new是在内存的堆(heap)上为对象开辟空间,aPerson在栈中(stack)存对象引用
+        //这里的内存是指JVM虚拟出来的java进程内存空间
         aPerson.repeatBreath(3);
         aPerson.growHeight(5);
         System.out.println(aPerson.getHeight());
@@ -27,5 +29,20 @@ public class HelloWorld {
         Woman woman = new Woman(5);
         woman.growHeight(10);
         System.out.println(woman.getHeight());
+
+        //static数据和方法
+        System.out.println("人口总数：" + Human.getPopulation());
+
+        //类型转换
+        int b;
+        b = (int)1.23;
+        System.out.println(b);
+
+        //向上转型，仍调用子类方法
+        MusicCup aCup = new BrokenCup();
+        aCup.addWater(10);
+        Human guest = new Human(5);
+        BrokenCup bCup = new BrokenCup();
+        guest.drink(bCup,10);
     }
 }

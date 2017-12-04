@@ -2,6 +2,7 @@ package com.yangguang.Class;
 
 import com.yangguang.Class.Battery;
 
+//组合Battery类
 public class Torch {
     private Battery theBattery = new Battery();
 
