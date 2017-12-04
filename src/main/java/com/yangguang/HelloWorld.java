@@ -2,9 +2,7 @@ package com.yangguang;
 
 import com.yangguang.Class.*;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 
 public class HelloWorld {
     public static void main(String[] args){
@@ -66,5 +64,37 @@ public class HelloWorld {
             System.out.println("IO Problem");
         }
         System.out.println("捕获异常后继续执行...");
+
+        Battery battery = new Battery();
+        battery.chargeBattery(0.5);
+        battery.useBattery(-0.5);
+
+        //文件读操作
+        try{
+            BufferedReader br = new BufferedReader(new FileReader("file.txt"));
+            String line = br.readLine();
+            while(line != null){
+                System.out.println(line);
+                line = br.readLine();
+            }
+            br.close();
+        }catch (IOException e){
+            System.out.println("IO Read Problem");
+        }
+
+        //文件写操作
+        try{
+            String content = "Thank you for your fish.";
+            File file = new File("new.txt");
+            if(!file.exists()){
+                file.createNewFile();
+            }
+            FileWriter fw = new FileWriter(file.getAbsoluteFile());
+            BufferedWriter bw = new BufferedWriter(fw);
+            bw.write(content);
+            bw.close();
+        }catch (IOException e){
+            System.out.println("IO Write Problem");
+        }
     }
 }
