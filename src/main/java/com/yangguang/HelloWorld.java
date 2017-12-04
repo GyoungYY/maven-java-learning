@@ -2,8 +2,12 @@ package com.yangguang;
 
 import com.yangguang.Class.*;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
 public class HelloWorld {
-    public static void main(String[] args) {
+    public static void main(String[] args){
         //基本类型
         int a = 5;
         System.out.println(a + 1);
@@ -53,5 +57,14 @@ public class HelloWorld {
         System.out.println(s.indexOf("gg"));
         System.out.println(s.equals("yang"));
         System.out.println("length:" + s.trim().length());
+
+        //异常处理
+        try{
+            BufferedReader br =  new BufferedReader(new FileReader("file.txt"));
+        }catch(IOException e){
+            e.printStackTrace();
+            System.out.println("IO Problem");
+        }
+        System.out.println("捕获异常后继续执行...");
     }
 }
