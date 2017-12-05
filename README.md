@@ -1,6 +1,6 @@
 # maven-java-learning
 
-##知识点
+## 知识点
 - 基本类型、表达式
 - 类、包、接口
 - 组合
@@ -17,6 +17,6 @@
 - 集合List、Set、Map
 - 内部类
 
-##运行
+## 运行
 - 直接点idea运行
 - mvn clean package，cd target,java -jar maven-java-learning-1.0-SNAPSHOT.jar
