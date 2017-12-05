@@ -3,6 +3,7 @@ package com.yangguang;
 import com.yangguang.Class.*;
 
 import java.io.*;
+import java.util.*;
 
 public class HelloWorld {
     public static void main(String[] args) {
@@ -100,18 +101,57 @@ public class HelloWorld {
         //多线程
         NewThread thread1 = new NewThread();
         NewThread thread2 = new NewThread();
-        thread1.start();
-        thread2.start();
+        //thread1.start();
+        //thread2.start();
 
         Thread thread3 = new Thread(new NewThread2(), "first");
         Thread thread4 = new Thread(new NewThread2(), "second");
-        thread3.start();
-        thread4.start();
+        //thread3.start();
+        //thread4.start();
 
         //多线程卖票程序
         Reservoir r = new Reservoir(30);
-        Booth b1 = new Booth(r);
-        Booth b2 = new Booth(r);
-        Booth b3 = new Booth(r);
+        //Booth b1 = new Booth(r);
+        //Booth b2 = new Booth(r);
+        //Booth b3 = new Booth(r);
+
+        //数组
+        Human[] persons = new Human[2];
+        persons[0] = new Human(160);
+        persons[1] = new Human(150);
+        int[] a1 = {1, 2, 3, 4};
+        System.out.println(a1[2]);
+        String[] s1 = {"Tom", "Tim", "Bob"};
+        System.out.println(s1[1]);
+
+        //List
+        List<String> l1 = new ArrayList<String>();
+        l1.add("good");
+        l1.add("bad");
+        l1.add("shit");
+        l1.remove(0);
+        System.out.println(l1.get(1));
+        System.out.println(l1.size());
+
+        //Set、Iterator
+        Set<Integer> set = new HashSet<Integer>();
+        set.add(4);
+        set.add(5);
+        set.add(4);
+        set.add(5);
+        set.add(6);
+        System.out.println(set);
+        System.out.println("set大小：" + set.size());
+        Iterator it = set.iterator();
+        while (it.hasNext()) {
+            System.out.println(it.next());
+        }
+
+        //Map
+        Map<String, Integer> m1 = new HashMap<String, Integer>();
+        m1.put("Vao", 11);
+        m1.put("Boo", 22);
+        m1.put("CC", 33);
+        System.out.println(m1.get("CC"));
     }
 }
