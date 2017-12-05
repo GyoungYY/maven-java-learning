@@ -153,5 +153,11 @@ public class HelloWorld {
         m1.put("Boo", 22);
         m1.put("CC", 33);
         System.out.println(m1.get("CC"));
+
+        //内部类
+        OuterClass oc = new OuterClass("HH");
+        oc.drinkWater(0.3);
+        OuterClass.Cup soloCup = oc.new Cup();
+        soloCup.getWater();
     }
 }
